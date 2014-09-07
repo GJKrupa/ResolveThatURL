@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "Resolve That URL",
+  "description": "Right click any anchor to resolve its shortened URL",
+  "version": "1.0",
+
+  "permissions": [
+    "contextMenus", "http://api.longurl.org/v2/expand"
+  ],
+  "content_scripts": [
+	{
+		"matches": ["http://*/*", "https://*/*"],
+		"js": ["content.js"],
+		"all_frames": true
+	}
+  ],
+  "background": {
+    "scripts": [
+	  "contextMenu.js"
+    ]
+  }
+}
